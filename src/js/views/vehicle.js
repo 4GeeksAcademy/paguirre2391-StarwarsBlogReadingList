@@ -5,11 +5,18 @@ import { Context } from "../store/appContext";
 export const Vehicles = () => {
     const { store, actions } = useContext(Context);
 
-    useEffect(() =>{
+    useEffect(() => {
         fetch("https://www.swapi.tech/api/vehicles")
-        .then((result) => result.json())
-        .then((data) => actions.setVehiclesData(data.results));
+            .then((result) => result.json())
+            .then((data) => actions.setVehiclesData(data.results))
+            .catch((error) => {
+                console.error("Error fetching vehicle data:", error);
+            });
     }, []);
+
+    const handleAddFavorite = (name) => {
+        actions.addFavorite(name);
+    };
 
     return (
         <div className="container">
@@ -34,7 +41,7 @@ export const Vehicles = () => {
                                         <Link to={"/singlevehicle/" + vehicle.uid}>
                                             <span className="btn btn-outline-primary">Learn more!</span>
                                         </Link>
-                                        <button className="btn btn-outline-danger" onClick={() => alert("Added to Favorites!")}>
+                                        <button className="btn btn-outline-danger" onClick={() => handleAddFavorite(vehicle.name)}>
                                             <i className="fa fa-heart" />
                                         </button>
                                     </div>

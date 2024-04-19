@@ -1,4 +1,5 @@
 // Characters.js
+
 import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
@@ -33,7 +34,7 @@ export const Characters = () => {
                                         <Link to={"/single/" + person.uid}>
                                             <span className="btn btn-outline-primary">Learn more!</span>
                                         </Link>
-                                        <button className="btn btn-outline-danger" onClick={() => alert("Added to Favorites!")}>
+                                        <button className="btn btn-outline-danger" onClick={() => actions.addFavorite(person.name)}>
                                             <i className="fa fa-heart" />
                                         </button>
                                     </div>

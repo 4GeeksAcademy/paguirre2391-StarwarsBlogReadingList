@@ -14,6 +14,10 @@ export const Planets = () => {
             });
     }, []);
 
+    const handleAddFavorite = (name) => {
+        actions.addFavorite(name);
+    };
+
     return (
         <div className="container">
             <div className="row">
@@ -34,7 +38,7 @@ export const Planets = () => {
                                         <Link to={`/singleplanet/${planet.uid}`}>
                                             <span className="btn btn-outline-primary">Learn more!</span>
                                         </Link>
-                                        <button className="btn btn-outline-danger" onClick={() => alert("Added to Favorites!")}>
+                                        <button className="btn btn-outline-danger" onClick={() => handleAddFavorite(planet.name)}>
                                             <i className="fa fa-heart" />
                                         </button>
                                     </div>

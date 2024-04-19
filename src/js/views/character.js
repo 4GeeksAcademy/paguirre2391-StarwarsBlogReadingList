@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
+// Characters.js
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Characters = () => {
     const { store, actions } = useContext(Context);
 
-    useEffect(() =>{
+    useEffect(() => {
         fetch("https://www.swapi.tech/api/people")
-        .then((result) => result.json())
-        .then((data) => actions.setPeopleData(data.results));
+            .then((result) => result.json())
+            .then((data) => actions.setPeopleData(data.results));
     }, []);
 
     return (
@@ -21,7 +22,7 @@ export const Characters = () => {
                     return (
                         <div key={person.uid}>
                             <div className="card" style={{ width: "18rem", marginRight: "15px" }}>
-                                <img src="https://barrie360.com/wp-content/uploads/2019/08/Star-Wars-400x200.png" className="card-img-top" alt="..." />
+                                <img src="" className="card-img-top" alt="..." />   
                                 <div className="card-body">
                                     <h5 className="card-title">{person.name}</h5>
                                     <p className="card-text">Gender: {person.gender}</p>
@@ -32,7 +33,7 @@ export const Characters = () => {
                                         <Link to={"/single/" + person.uid}>
                                             <span className="btn btn-outline-primary">Learn more!</span>
                                         </Link>
-                                        <button className="btn btn-outline-danger" onClick={() => alert("Like clicked")}>
+                                        <button className="btn btn-outline-danger" onClick={() => alert("Added to Favorites!")}>
                                             <i className="fa fa-heart" />
                                         </button>
                                     </div>

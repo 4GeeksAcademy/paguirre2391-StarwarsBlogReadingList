@@ -13,7 +13,7 @@ export const SingleVehicle = () => {
             .catch((error) => {
                 console.error("Error fetching vehicle data:", error);
             });
-    }, [vehicleId]); // Asegúrate de que vehicleId esté en la lista de dependencias
+    }, [vehicleId]); 
 
     const vehicle = store.vehicles.find(vehicle => vehicle.uid === vehicleId);
 
@@ -23,7 +23,7 @@ export const SingleVehicle = () => {
                 {vehicle ? (
                     <div className="row d-flex" key={vehicle.uid}>
                         <div className="col-sm-12 col-md-6">
-                            <img src="https://barrie360.com/wp-content/uploads/2019/08/Star-Wars-400x200.png" style={{ width: "100%", height: "75%" }} alt="vehicle" />
+                        <img src="" className="card-img-top" alt="..." />
                         </div>
                         <div className="col-sm-12 col-md-6">
                             <h4 className="">{vehicle.name}</h4>
@@ -47,7 +47,7 @@ export const SingleVehicle = () => {
                                     <p>Manufacturer</p>
                                     <p>{vehicle.manufacturer}</p>
                                 </div>
-                                {/* Agrega más campos según sea necesario */}
+                                
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ export const SingleVehicle = () => {
                 )}
             </div>
             <Link to="/">
-                <button className="btn btn-primary" href="#" role="button">
+                <button className="btn btn-primary mt-3" href="#" role="button">
                     Back home
                 </button>
             </Link>

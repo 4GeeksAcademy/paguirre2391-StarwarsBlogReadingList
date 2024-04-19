@@ -8,11 +8,10 @@ import { Planets } from "./views/planet";
 import { Vehicles } from "./views/vehicle";
 import { Single } from "./views/single";
 import { SingleVehicle } from "./views/singlevehicle";
-import { SinglePlanet } from "./views/singleplanet"; // Importamos SinglePlanet
-import injectContext from "./store/appContext";
-
+import { SinglePlanet } from "./views/singleplanet";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import injectContext from "./store/appContext";
 
 const Layout = () => {
     const basename = process.env.BASENAME || "";
@@ -29,7 +28,7 @@ const Layout = () => {
                         <Route path="/vehicles" element={<Vehicles />} /> 
                         <Route path="/single/:charId" element={<Single />} />
                         <Route path="/singlevehicle/:vehicleId" element={<SingleVehicle />} />
-                        <Route path="/singleplanet/:planetId" element={<SinglePlanet />} /> {/* Añadimos la ruta para SinglePlanet */}
+                        <Route path="/singleplanet/:planetId" element={<SinglePlanet />} />
                         <Route path="*" element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />

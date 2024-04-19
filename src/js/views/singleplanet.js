@@ -23,7 +23,7 @@ export const SinglePlanet = () => {
                 {planet ? (
                     <div className="row d-flex" key={planet.uid}>
                         <div className="col-sm-12 col-md-6">
-                            <img src="https://barrie360.com/wp-content/uploads/2019/08/Star-Wars-400x200.png" style={{ width: "100%", height: "75%" }} alt="planet" />
+                        <img src="" className="card-img-top" alt="..." />
                         </div>
                         <div className="col-sm-12 col-md-6">
                             <h4 className="">{planet.name}</h4>

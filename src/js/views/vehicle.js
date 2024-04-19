@@ -21,7 +21,7 @@ export const Vehicles = () => {
                     return (
                         <div key={vehicle.uid}>
                             <div className="card" style={{ width: "18rem", marginRight: "15px" }}>
-                                <img src="https://barrie360.com/wp-content/uploads/2019/08/Star-Wars-400x200.png" className="card-img-top" alt="..." />
+                                <img src="" className="card-img-top" alt="..." />
                                 <div className="card-body">
                                     <h5 className="card-title">{vehicle.name}</h5>
                                     <p className="card-text">model: {vehicle.model}</p>
@@ -34,7 +34,7 @@ export const Vehicles = () => {
                                         <Link to={"/singlevehicle/" + vehicle.uid}>
                                             <span className="btn btn-outline-primary">Learn more!</span>
                                         </Link>
-                                        <button className="btn btn-outline-danger" onClick={() => alert("Like clicked")}>
+                                        <button className="btn btn-outline-danger" onClick={() => alert("Added to Favorites!")}>
                                             <i className="fa fa-heart" />
                                         </button>
                                     </div>

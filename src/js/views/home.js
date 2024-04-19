@@ -5,10 +5,10 @@ import { Vehicles } from "./vehicle";
 import "../../styles/home.css";
 
 export const Home = () => (
-	<div >
-    <Characters />
-    <Planets />
-    <Vehicles />
+	<div className="container">
+		<Characters />
+		<Planets />
+		<Vehicles />
+		
 	</div>
-
 );
